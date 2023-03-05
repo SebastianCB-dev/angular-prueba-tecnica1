@@ -35,8 +35,10 @@ export class TaskService {
   }
 
   deleteTask(id: string) {
-    if(this.existsTaskByID(id)) {
-      this._tasks = this._tasks.filter((task) => task._id !== id)
+    if(this.existsTaskByID(id)) {      
+      this._tasks = this._tasks.filter((task) => task._id !== id);
+      console.log({id})
+      this.saveTasks();
     }
   }
 

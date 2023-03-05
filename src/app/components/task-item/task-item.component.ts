@@ -15,6 +15,6 @@ export class TaskItemComponent {
   constructor(private taskSrv: TaskService) {}
 
   eliminarTarea(id: string) {
-
+    this.taskSrv.deleteTask(id);
   }
 }

@@ -38,7 +38,7 @@ export class AppComponent {
       this.taskForm.markAllAsTouched();
       return;
     }
-    this.taskForm.value.id = uuid.v4();
+    this.taskForm.value._id = uuid.v4();
     const data = this.taskForm.value;
     this.taskSrv.addTask(data)
   }
