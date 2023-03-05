@@ -37,6 +37,7 @@ export class AppComponent {
       return;
     }
     this.taskForm.value._id = uuid.v4();
+    this.taskForm.value.isDone = false;
     const data = this.taskForm.value;
     this.taskSrv.addTask(data)
   }

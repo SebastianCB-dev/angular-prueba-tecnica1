@@ -44,8 +44,8 @@
                id="input-nombre-tarea" 
                placeholder="Ir al supermercado"
                formControlName="task-description"
+               [ngClass]="{'is-invalid': isNotValidControl('task-description')}" 
                required>
-               <!-- [ngClass]="{'is-invalid': true}"  -->
         <label for="input-nombre-tarea">Descripción de la tarea</label>
       </div>
       <span class="text-danger"
@@ -55,6 +55,7 @@
                class="form-control"
                [min]="2023-05-03"
                formControlName="task-date"
+               [ngClass]="{'is-invalid': isNotValidControl('task-date')}" 
                id="input-fecha-tarea">
           <label for="input-fecha-tarea">Fecha límite de la tarea</label>
       </div>
