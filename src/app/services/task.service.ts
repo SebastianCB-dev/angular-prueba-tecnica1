@@ -24,4 +24,13 @@ export class TaskService {
     this._tasks = [];
     return;
   }
+
+  addTask(task: Task) {
+    this._tasks.push(task);
+    this.saveTasks();
+  }
+
+  saveTasks() {
+    localStorage.setItem('tasks-angular', JSON.stringify(this._tasks));
+  }
 }
