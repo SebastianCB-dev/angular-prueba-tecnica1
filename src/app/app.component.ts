@@ -25,23 +25,22 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder,
               private taskSrv: TaskService) {
+    this.tasks = taskSrv.tasks;
   }
 
-  ngOnInit() {
-  }
   // Return today's date
   getDate() {
     return new Date();
   }
 
-  crearTarea() {
+  createTask() {
     if(this.taskForm.invalid) {
       this.taskForm.markAllAsTouched();
       return;
     }
     this.taskForm.value.id = uuid.v4();
     const data = this.taskForm.value;
-    
+    this.taskSrv.addTask(data)
   }
 
   isNotValidControl(control: string): boolean {
