@@ -12,13 +12,18 @@
   <div class="col-md-6">
     <!-- No Tasks -->
     <div class="no-tasks"
-         *ngIf="tasks.length === 0">
+         *ngIf="tasks.length === 0; else tasksContainer">
         <div class="alert alert-warning" role="alert">
-          No tienes tareas creadas!
+          No tienes tareas creadas.
         </div>
         <img src="../assets/imgs/no-data.svg"
              alt="Image No Tasks">
     </div>
+    
+    <!-- Render tasks -->
+    <ng-template #tasksContainer>
+      <h3>Tus tareas:</h3>
+    </ng-template>
   </div>
   <!-- Add Tasks -->
   <div class="col-md-6 add-task">
