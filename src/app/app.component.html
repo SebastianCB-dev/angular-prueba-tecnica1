@@ -6,33 +6,10 @@
   </div>
 </div>
 
-<div class="row my-4">
-  <!-- Show Tasks -->
-  <div class="col-md-6">
-    <!-- No Tasks -->
-    <div class="no-tasks"
-         *ngIf="taskSrv.tasks.length === 0; else tasksContainer">
-        <div class="alert alert-warning" role="alert">
-          No tienes tareas creadas.
-        </div>
-        <img src="../assets/imgs/no-data.svg"
-             alt="Image No Tasks">
-    </div>
-    
-    <!-- Render tasks -->
-    <ng-template #tasksContainer>
-      <h3>Tus tareas:</h3>
-      <hr>     
-      <div class="task mt-4"
-           *ngFor="let task of taskSrv.tasks; let i = index">
-        <app-task-item [task]="task"></app-task-item>
-      </div>
-    </ng-template>
-  </div>
-
-
+<div class="row">
+  
   <!-- Add Tasks -->
-  <div class="col-md-6 add-task">
+  <div class="col-md-6 add-task mt-4">
     <h3 class="text-center">Añadir tarea</h3>
     <hr>
     <form class="mt-3"
@@ -76,5 +53,25 @@
       <button class="btn btn-primary" 
               type="submit">Crear tarea</button>
     </form>
+  </div>
+
+  <!-- Show Tasks -->
+  <div class="col-md-6 mt-4">
+    <!-- No Tasks -->
+    <div class="no-tasks" *ngIf="taskSrv.tasks.length === 0; else tasksContainer">
+      <div class="alert alert-warning" role="alert">
+        No tienes tareas creadas.
+      </div>
+      <img src="../assets/imgs/no-data.svg" alt="Image No Tasks">
+    </div>
+  
+    <!-- Render tasks -->
+    <ng-template #tasksContainer>
+      <h3 class="text-center">Tus tareas:</h3>
+      <hr>
+      <div class="task mt-4" *ngFor="let task of taskSrv.tasks; let i = index">
+        <app-task-item [task]="task"></app-task-item>
+      </div>
+    </ng-template>
   </div>
 </div>
