@@ -15,6 +15,7 @@ const myId = uuid.v4();
 })
 export class AppComponent {
   public isSearching = false;
+  public resultsQuery: Task[] = [];
   // Form
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],
@@ -55,4 +56,19 @@ export class AppComponent {
     return this.taskForm.get(control)!.touched &&
            this.taskForm.get(control)!.invalid
   } 
+
+  searchTasks(query: string, category: string) {
+    let result = [...this.taskSrv.tasks];
+    if(query.trim().length === 0 && category === 'Todas') {
+      return [...this.taskSrv.tasks];
+    }
+    this.taskSrv.loadTasks();
+    if (category !== 'Todas') {
+      result = result.filter((task) => task['task-category'] === category);
+    }
+    if (query.trim().length !== 0) {
+      result = result.filter((task) => task['task-description'].includes(query));
+    }
+    return result;
+  }
 }

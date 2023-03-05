@@ -72,9 +72,13 @@
       <div class="input-group mb-3">
         <input type="text" 
                class="form-control" 
-               placeholder="Buscar tarea...">
-        <select class="form-control select-search">
-          <option value="Todos">Todas</option>
+               placeholder="Buscar tarea..."
+               #inputSearch
+               (keyup)="searchTasks(inputSearch.value, select.value)">
+        <select class="form-control select-search"
+                #select
+                (change)="searchTasks(inputSearch.value, select.value)">
+          <option value="Todas">Todas</option>
           <option *ngFor="let category of taskSrv.categories"
                   [value]="category">
             {{ category }}
@@ -82,17 +86,12 @@
         </select>        
       </div>
       <!-- All tasks -->
-      <div *ngIf="!isSearching">
+      <div>
         <div class="task mt-4" 
-            *ngFor="let task of taskSrv.tasks; let i = index"
-            >
+            *ngFor="let task of searchTasks(inputSearch.value, select.value)">
           <app-task-item [task]="task"></app-task-item>
         </div>        
-      </div>
-      <!-- Search tasks -->
-      <div *ngIf="isSearching">
-        <h2>Searching...</h2>
-      </div>
+      </div>      
     </ng-template>
   </div>
 </div>
