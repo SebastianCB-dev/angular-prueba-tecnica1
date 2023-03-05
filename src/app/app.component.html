@@ -1,0 +1,40 @@
+<!-- Title -->
+<div class="row mt-2">
+  <div class="col-md-12">
+    <h1>Administrador de tareas</h1>
+    <hr>
+  </div>
+</div>
+
+<!-- Task manager -->
+<div class="row">
+  <!-- Show Tasks -->
+  <div class="col-md-6">
+    
+  </div>
+  <!-- Add Tasks -->
+  <div class="col-md-6">
+    <h3 class="text-center">Añadir tarea</h3>
+    <form class="mt-3">
+      <div class="form-floating mb-3">
+        <input type="text" 
+               class="form-control"
+               id="input-nombre-tarea" 
+               placeholder="name@example.com">
+               <!-- [ngClass]="{'is-invalid': true}"  -->
+        <label for="input-nombre-tarea">Descripción de la tarea</label>
+      </div>
+      <span class="text-danger">La descripción de la tarea es obligatorio.</span>
+      <div class="form-floating mb-3">
+        <input type="date" 
+               class="form-control"
+               id="input-fecha-tarea">
+          <label for="input-fecha-tarea">Fecha límite de la tarea</label>
+               <!-- [min]="getDate()"> -->
+      </div>
+
+      <button class="btn btn-primary">Crear tarea</button>
+
+    </form>
+  </div>
+</div>
