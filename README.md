@@ -9,5 +9,5 @@
 - [x]: Capacidad de marcar las tareas como completadas.
 - [x]: Capacidad de agregar categorías a las tareas.
 - [x]: Capacidad de agregar fechas límite a las tareas.
-- []: Capacidad de filtrar tareas por categoría.
-- []: Barra de búsqueda.
+- [x]: Capacidad de filtrar tareas por categoría.
+- [x]: Barra de búsqueda.
