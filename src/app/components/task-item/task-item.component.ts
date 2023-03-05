@@ -11,7 +11,6 @@ import { TaskService } from 'src/app/services/task.service';
 export class TaskItemComponent {
 
   @Input() task!: Task;
-  @Input() index!: number;
   constructor(private taskSrv: TaskService) {}
 
   eliminarTarea(id: string) {
@@ -26,6 +25,6 @@ export class TaskItemComponent {
   }
 
   updateStatus() {
-    
+    this.taskSrv.updateStatus(this.task._id);
   }
 }

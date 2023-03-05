@@ -23,6 +23,7 @@ export class TaskService {
 
   addTask(task: Task) {
     this.tasks.push(task);
+    this.sortTasks();
     this.saveTasks();
   }
 
@@ -39,5 +40,28 @@ export class TaskService {
 
   existsTaskByID(id: string) {
     return this.tasks.find((task) => task._id === id)
+  }
+
+  updateStatus(id: string) {
+    if(this.existsTaskByID(id)) {
+      const task = this.tasks.find((task) => task._id === id);
+      if(task) {
+        task.isDone = !task.isDone;
+        this.sortTasks();
+        this.saveTasks();
+      }
+    }
+  }
+
+  sortTasks() {
+    this.tasks = this.tasks.sort((a, b) => {
+      if(a.isDone && !b.isDone) {
+        return 1;
+      }
+      if(!a.isDone && b.isDone) {
+        return -1;
+      }
+      return 0;
+    })
   }
 }
