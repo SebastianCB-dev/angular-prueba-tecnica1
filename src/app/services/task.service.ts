@@ -11,6 +11,10 @@ export class TaskService {
     this.loadTasks();
   }  
 
+  get tasks() {
+    return this._tasks;
+  }
+
   loadTasks() {
     const tasks = localStorage.getItem('tasks-angular');
     if(tasks) {

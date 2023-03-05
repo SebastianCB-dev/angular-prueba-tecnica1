@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { formatDate } from '@angular/common';
+import { TaskService } from './services/task.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
                   [Validators.required]]
   })
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private taskSrv: TaskService) {
   }
 
   ngOnInit() {
