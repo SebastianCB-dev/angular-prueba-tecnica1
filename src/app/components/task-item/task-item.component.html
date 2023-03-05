@@ -9,11 +9,9 @@
       <input class="form-check-input" 
              type="checkbox" 
              role="switch" 
-             id="flexSwitchCheckDefault"
              [checked]="!task['isDone']"
              (change)="updateStatus()">
-      <label [ngClass]="getClassByStatus()" 
-             for="flexSwitchCheckDefault">
+      <label [ngClass]="getClassByStatus()">
             {{ task['isDone'] ? 'Completada' : 'Pendiente' }}
       </label>
     </div>

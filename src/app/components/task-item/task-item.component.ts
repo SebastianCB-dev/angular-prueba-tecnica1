@@ -19,9 +19,9 @@ export class TaskItemComponent {
 
   getClassByStatus() {
     if(this.task.isDone) {
-      return 'text-success form-check-label';
+      return 'text-success';
     }
-    return 'text-warning form-check-label';
+    return 'text-warning';
   }
 
   updateStatus() {
