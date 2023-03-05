@@ -6,7 +6,7 @@ import { Task } from '../interfaces/task';
 })
 export class TaskService {
   public tasks: Task[] = [];
-
+  public categories: string[] = ['Personal', 'Trabajo', 'Escuela'];
   constructor() {
     this.loadTasks();
   }  

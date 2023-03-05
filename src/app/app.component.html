@@ -61,7 +61,18 @@
           <label for="input-fecha-tarea">Fecha límite de la tarea</label>
       </div>
       <span class="text-danger"
-            *ngIf="isNotValidControl('task-date')">La descripción de la tarea es obligatorio.</span>      
+            *ngIf="isNotValidControl('task-date')">La descripción de la tarea es obligatorio.</span>  
+
+      <div class="form-floating mb-3 date-input">
+        <select class="form-control"
+                formControlName="task-category">
+          <option *ngFor="let category of taskSrv.categories"
+                  [value]="category">
+            {{ category }}
+          </option>
+        </select>
+        <label for="floatingSelect">Categoría</label>
+      </div>
       <button class="btn btn-primary" 
               type="submit">Crear tarea</button>
     </form>

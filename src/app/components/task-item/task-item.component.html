@@ -13,8 +13,9 @@
              (change)="updateStatus()">
       <label [ngClass]="getClassByStatus()">
             {{ task['isDone'] ? 'Completada' : 'Pendiente' }}
-      </label>
+      </label>      
     </div>
+    <p class="card-text category">{{ task['task-category'] }}</p>
     <p class="card-text">Fecha: {{ task['task-date']}}</p>
     <a class="btn btn-danger" (click)="eliminarTarea(task['_id'])">Eliminar</a>
   </div>

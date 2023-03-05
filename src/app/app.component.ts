@@ -18,7 +18,8 @@ export class AppComponent {
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],
     'task-date': [formatDate(this.getDate(), 'yyyy-MM-dd', 'en'), 
-                  [Validators.required]]
+                  [Validators.required]],
+    'task-category': ['Personal', [Validators.required]]
   })
 
   constructor(private fb: FormBuilder,
@@ -43,7 +44,8 @@ export class AppComponent {
     const data = this.taskForm.value;
     this.taskSrv.addTask(data);
     this.taskForm.reset({
-      'task-date': formatDate(this.getDate(), 'yyyy-MM-dd', 'en')      
+      'task-date': formatDate(this.getDate(), 'yyyy-MM-dd', 'en'),
+      'task-category': 'Personal'
     });
 
   }

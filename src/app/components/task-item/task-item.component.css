@@ -1,0 +1,13 @@
+.category {
+  background-color: #000;
+  width: max-content;
+  padding: 5px;
+  color: #fff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
