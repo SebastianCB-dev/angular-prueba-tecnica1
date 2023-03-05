@@ -7,10 +7,18 @@
 </div>
 
 <!-- Task manager -->
-<div class="row">
+<div class="row my-4">
   <!-- Show Tasks -->
   <div class="col-md-6">
-    
+    <!-- No Tasks -->
+    <div class="no-tasks"
+         *ngIf="tasks.length === 0">
+        <div class="alert alert-warning" role="alert">
+          No tienes tareas creadas!
+        </div>
+        <img src="../assets/imgs/no-data.svg"
+             alt="Image No Tasks">
+    </div>
   </div>
   <!-- Add Tasks -->
   <div class="col-md-6 add-task">

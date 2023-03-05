@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { formatDate } from '@angular/common';
 import { TaskService } from './services/task.service';
+import { Task } from './interfaces/task';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { TaskService } from './services/task.service';
 })
 export class AppComponent {
   
+  public tasks: Task[] = [];
   // Form
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],

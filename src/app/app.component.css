@@ -12,3 +12,10 @@
   margin: 0 auto;
   margin-top: 20px;
 }
+
+.no-tasks img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
