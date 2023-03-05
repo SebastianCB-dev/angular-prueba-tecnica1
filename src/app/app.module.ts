@@ -3,10 +3,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TaskItemComponent } from './components/task-item/task-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskItemComponent
   ],
   imports: [
     BrowserModule,

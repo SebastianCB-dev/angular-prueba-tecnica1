@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <div class="color"></div>
+  <div class="card-body">
+    <h5 class="card-title">Task {{ index }}.</h5>
+    <p class="card-text">
+      {{ task['task-description'] }}
+    </p>
+    <p class="card-text">Fecha: {{ task['task-date']}}</p>
+    <a class="btn btn-danger" (click)="eliminarTarea(task._id)">Go somewhere</a>
+  </div>
+</div>
