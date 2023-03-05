@@ -17,4 +17,15 @@ export class TaskItemComponent {
   eliminarTarea(id: string) {
     this.taskSrv.deleteTask(id);
   }
+
+  getClassByStatus() {
+    if(this.task.isDone) {
+      return 'text-success form-check-label';
+    }
+    return 'text-warning form-check-label';
+  }
+
+  updateStatus() {
+    
+  }
 }

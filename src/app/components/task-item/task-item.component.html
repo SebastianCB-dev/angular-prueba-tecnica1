@@ -5,6 +5,18 @@
     <p class="card-text">
       {{ task['task-description'] }}
     </p>
+    <div class="form-check form-switch">
+      <input class="form-check-input" 
+             type="checkbox" 
+             role="switch" 
+             id="flexSwitchCheckDefault"
+             [checked]="!task['isDone']"
+             (change)="updateStatus()">
+      <label [ngClass]="getClassByStatus()" 
+             for="flexSwitchCheckDefault">
+            {{ task['isDone'] ? 'Completada' : 'Pendiente' }}
+      </label>
+    </div>
     <p class="card-text">Fecha: {{ task['task-date']}}</p>
     <a class="btn btn-danger" (click)="eliminarTarea(task['_id'])">Eliminar</a>
   </div>
