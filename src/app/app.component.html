@@ -22,6 +22,11 @@
     <!-- Render tasks -->
     <ng-template #tasksContainer>
       <h3>Tus tareas:</h3>
+      <div class="task mt-4"
+           *ngFor="let task of tasks; let i = index">
+        <app-task-item [index]="i + 1"
+                       [task]="task"></app-task-item>
+      </div>
     </ng-template>
   </div>
 
