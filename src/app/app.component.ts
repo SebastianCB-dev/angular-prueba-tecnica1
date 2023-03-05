@@ -14,8 +14,6 @@ const myId = uuid.v4();
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  isSearching: boolean = false;
   // Form
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],
@@ -54,16 +52,4 @@ export class AppComponent {
     return this.taskForm.get(control)!.touched &&
            this.taskForm.get(control)!.invalid
   } 
-
-  searchTask(query: string) {
-    this.isSearching = true;
-    this.taskSrv.loadTasks();
-    if(query.length === 0) {
-      this.isSearching = false;
-      return;
-    }
-    this.taskSrv.tasks = this.taskSrv.tasks.filter((task) => {
-      return task['task-description'].toLowerCase().includes(query.toLowerCase());
-    });
-  }
 }

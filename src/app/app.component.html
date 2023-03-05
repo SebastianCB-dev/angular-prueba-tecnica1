@@ -11,7 +11,7 @@
   <div class="col-md-6">
     <!-- No Tasks -->
     <div class="no-tasks"
-         *ngIf="taskSrv.tasks.length === 0 && !isSearching; else tasksContainer">
+         *ngIf="taskSrv.tasks.length === 0; else tasksContainer">
         <div class="alert alert-warning" role="alert">
           No tienes tareas creadas.
         </div>
@@ -22,12 +22,7 @@
     <!-- Render tasks -->
     <ng-template #tasksContainer>
       <h3>Tus tareas:</h3>
-      <hr>
-      <input type="text" 
-             class="form-control"
-             placeholder="Buscar tarea"
-             #searchInput
-             (keyup)="searchTask(searchInput.value)">
+      <hr>     
       <div class="task mt-4"
            *ngFor="let task of taskSrv.tasks; let i = index">
         <app-task-item [task]="task"></app-task-item>
