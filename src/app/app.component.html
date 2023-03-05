@@ -69,8 +69,29 @@
     <ng-template #tasksContainer>
       <h3 class="text-center">Tus tareas:</h3>
       <hr>
-      <div class="task mt-4" *ngFor="let task of taskSrv.tasks; let i = index">
-        <app-task-item [task]="task"></app-task-item>
+      <div class="input-group mb-3">
+        <input type="text" 
+               class="form-control" 
+               placeholder="Buscar tarea...">
+        <select class="form-control select-search">
+          <option value="Todos">Todas</option>
+          <option *ngFor="let category of taskSrv.categories"
+                  [value]="category">
+            {{ category }}
+          </option>
+        </select>        
+      </div>
+      <!-- All tasks -->
+      <div *ngIf="!isSearching">
+        <div class="task mt-4" 
+            *ngFor="let task of taskSrv.tasks; let i = index"
+            >
+          <app-task-item [task]="task"></app-task-item>
+        </div>        
+      </div>
+      <!-- Search tasks -->
+      <div *ngIf="isSearching">
+        <h2>Searching...</h2>
       </div>
     </ng-template>
   </div>

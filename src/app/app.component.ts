@@ -14,6 +14,7 @@ const myId = uuid.v4();
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public isSearching = false;
   // Form
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],
