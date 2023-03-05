@@ -33,4 +33,14 @@ export class TaskService {
   saveTasks() {
     localStorage.setItem('tasks-angular', JSON.stringify(this._tasks));
   }
+
+  deleteTask(id: string) {
+    if(this.existsTaskByID(id)) {
+      this._tasks = this._tasks.filter((task) => task._id !== id)
+    }
+  }
+
+  existsTaskByID(id: string) {
+    return this._tasks.find((task) => task._id === id)
+  }
 }
