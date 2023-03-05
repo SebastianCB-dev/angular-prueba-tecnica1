@@ -1,27 +1,13 @@
-# AngularPruebaTecnica1
+# Prueba tecnica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [x]:  Las tareas deben almacenarse en un servicio separado llamado TaskService.
+- [x]: El componente AppComponent debe llamar al servicio TaskService para obtener la lista de tareas al inicializarse.
+- [x]: El formulario de agregar tarea debe tener validación de campos requeridos y una longitud mínima para el nombre de la tarea.
+- [x]: Al agregar una nueva tarea, la lista de tareas debe actualizarse automáticamente.
+- [x]: Al hacer clic en el botón de eliminar tarea en un TaskItemComponent, la tarea correspondiente debe eliminarse de la lista de tareas.
+- []: La aplicación debe tener un diseño limpio y agradable para el usuario, que se adapte al tamaño de pantalla de un móvil y un pc.
+- [x]: Capacidad de marcar las tareas como completadas.
+- [x]: Capacidad de agregar categorías a las tareas.
+- [x]: Capacidad de agregar fechas límite a las tareas.
+- []: Capacidad de filtrar tareas por categoría.
+- []: Barra de búsqueda.
