@@ -15,7 +15,6 @@ const myId = uuid.v4();
 })
 export class AppComponent {
   
-  public tasks: Task[] = [];
   // Form
   public taskForm: FormGroup = this.fb.group({
     'task-description': ['', [Validators.required, Validators.minLength(3)]],
@@ -24,8 +23,7 @@ export class AppComponent {
   })
 
   constructor(private fb: FormBuilder,
-              private taskSrv: TaskService) {
-    this.tasks = taskSrv.tasks;
+              public taskSrv: TaskService) {
   }
 
   // Return today's date

@@ -11,7 +11,7 @@
   <div class="col-md-6">
     <!-- No Tasks -->
     <div class="no-tasks"
-         *ngIf="tasks.length === 0; else tasksContainer">
+         *ngIf="taskSrv.tasks.length === 0; else tasksContainer">
         <div class="alert alert-warning" role="alert">
           No tienes tareas creadas.
         </div>
@@ -23,7 +23,7 @@
     <ng-template #tasksContainer>
       <h3>Tus tareas:</h3>
       <div class="task mt-4"
-           *ngFor="let task of tasks; let i = index">
+           *ngFor="let task of taskSrv.tasks; let i = index">
         <app-task-item [index]="i + 1"
                        [task]="task"></app-task-item>
       </div>
