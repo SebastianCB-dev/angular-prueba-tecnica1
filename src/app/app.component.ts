@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { formatDate } from '@angular/common';
-import { TaskService } from './services/task.service';
-import { Task } from './interfaces/task';
+import * as uuid from 'uuid';
 
+import { Task } from './interfaces/task';
+import { TaskService } from './services/task.service';
+
+
+const myId = uuid.v4();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,9 +39,9 @@ export class AppComponent {
       this.taskForm.markAllAsTouched();
       return;
     }
-
-    console.log(this.taskForm.value);
-    // TODO: Crear Tarea
+    this.taskForm.value.id = uuid.v4();
+    const data = this.taskForm.value;
+    
   }
 
   isNotValidControl(control: string): boolean {
